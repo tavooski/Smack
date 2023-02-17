@@ -1,5 +1,6 @@
 package com.example.smack
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -47,7 +48,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginBttnNavClicked(view: View) {
-
+        val loginIntent = Intent(this, LoginActivity::class.java)
+        startActivity(loginIntent)
     }
 
     fun addChannelClicked(view: View) {
@@ -55,6 +57,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessageBttnClicked(view: View) {
-        
+
     }
 }
