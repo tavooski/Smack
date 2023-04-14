@@ -1,10 +1,12 @@
-package com.example.smack
+package com.example.smack.controller
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import com.example.smack.R
+import com.example.smack.services.AuthService
 import java.util.*
 
 class CreateUserActivity : AppCompatActivity() {
@@ -38,7 +40,7 @@ class CreateUserActivity : AppCompatActivity() {
         val b = random.nextInt(255)
 
         val createAvatarImageView = findViewById<ImageView>(R.id.createAvatarImageView)
-        createAvatarImageView.setBackgroundColor(Color.rgb(r,g,b))
+        createAvatarImageView.setBackgroundColor(Color.rgb(r, g, b))
 
         val savedR = r.toDouble() / 255
         val savedG = g.toDouble() / 255
@@ -48,6 +50,10 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun createUserClicked(view: View) {
+        AuthService.registerUser(this, "j@j.com", "123456") { complete ->
+            if (complete) {
 
+            }
+        }
     }
 }
